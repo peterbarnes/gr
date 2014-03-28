@@ -3,16 +3,51 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <title><%= content_for?(:title) ? yield(:title) : "Gameroom For President" %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "vendor/modernizr", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">Gameroom</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+        </ul>
+    
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><%= link_to "Contact", contact_path %></li>
+          <li><%= link_to "About", about_path %></li>
+          <li class="has-dropdown">
+            <%= link_to "Services", services_path %>
+            <ul class="dropdown">
+              <li><a href="#">Selling/Trading</a></li>
+              <li><a href="#">Repairs</a></li>
+              <li><a href="#">Disc Cleaning</a></li>
+              <li><a href="#">Volunteering</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <%= link_to "Locations", locations_path %>
+            <ul class="dropdown">
+              <li><a href="#">Gameroom Downtown</a></li>
+              <li><a href="#">Gameroom South</a></li>
+            </ul>
+          </li>
+        </ul>
+    
+        <!-- Left Nav Section -->
+        <ul class="left">
+        </ul>
+      </section>
+    </nav>
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
