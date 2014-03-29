@@ -55,7 +55,7 @@ $body-font-family: "Open Sans" !important;
 // $default-float: left;
 
 // We use these as default colors throughout
-$primary-color: #AD009F;
+$primary-color: #9500A6;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -920,7 +920,7 @@ $primary-color: #AD009F;
 // We use these to control border styles
 // $side-nav-divider-size: 1px;
 // $side-nav-divider-style: solid;
-// $side-nav-divider-color: scale-color(#fff, $lightness: -10%);
+$side-nav-divider-color: scale-color(#858585, $lightness: -10%);
 
 // Split Buttons
 
