@@ -5,6 +5,9 @@
 	background-color: #eaeaea;
 }
 
+.fa {
+	font-family: FontAwesome !important;
+}
 ul {
 	list-style: none;
 }
@@ -67,4 +70,12 @@ footer {
 	padding: 10px;
 	margin-bottom: 15px;
 	box-shadow: 0 0 3px #000000;
+}
+
+.links {
+	margin-top: 10px;
+	width: 20%;
+	.button.radius {
+		width: 100%;
+	}
 }
