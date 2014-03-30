@@ -17,8 +17,22 @@
 		<div class="header">
 			<h4><i class="fa fa-comment"></i> Questions, comments, or concerns?</h4>
 		</div>
-		<div class="links">
-			<p>Send an email to danaevansgameroom@gmail.com </p>
+		<div class="email">
+			<%= form_tag("/send", method: "post") do %>
+				<p>
+					<%= label_tag(:name, "Name") %>
+					<%= text_field_tag(:name, params[:name]) %>
+				</p>
+				<p>
+					<%= label_tag(:email, "Email") %>
+					<%= text_field_tag(:email, params[:email]) %>
+				</p>
+				<p>
+					<%= label_tag(:body, "Message") %>
+					<%= text_area_tag(:body) %>
+				</p>
+				<input name="commit" type="submit" value="Send" class="button expand radius">
+				<% end %>
 		</div>
 	</div>
 </div>
