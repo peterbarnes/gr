@@ -3,6 +3,6 @@ class Mailer < ActionMailer::Base
 
   def email(params)
   	@params = params
-  	mail(to: "barnespeter213@gmail.com", subject: "Test email")
+  	mail(to: "barnespeter213@gmail.com", subject: "#{@params[:name]} submitted a comment")
   end
 end
