@@ -20,10 +20,10 @@ class StaticPagesController < ApplicationController
 
   def sendit
     if Mailer.email(params).deliver
-      flash[:notice] = "Your message has been sent"
+      flash[:success] = "Your message has been sent"
     else
       flash[:error] = "Something went wrong"
     end
-    redirect_to root_url
+    redirect_to contact_path
   end
 end

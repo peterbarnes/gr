@@ -1,10 +1,11 @@
+<%= render 'layouts/messages' %>
 <div class="small-12 medium-12 large-12 columns">
 	<div class="container">
 		<div class="header">
 			<h3><i class="fa fa-group"></i> Follow us</h3>
 		</div>
 		<div class="links">
-				<a href="https://www.facebook.com" class="button radius expand" target="blank"><i class="fa fa-facebook"></i> Facebook</a>
+				<a href="https://www.facebook.com/gameroomforpresident" class="button radius expand" target="blank"><i class="fa fa-facebook"></i> Facebook</a>
 				<a href="#" class="button disabled radius expand"><i class="fa fa-twitter"></i> Twitter (Coming soon)</a>
 				<a href="#" class="button disabled radius expand"><i class=" fa fa-tumblr"></i> Tumblr (Coming soon)</a>
 		</div>
@@ -16,14 +17,16 @@
 			<h4><i class="fa fa-comment"></i> Questions, comments, or concerns?</h4>
 		</div>
 		<div class="email">
-			<%= form_tag("/send", method: "post") do %>
+			<%= form_tag("/send", method: "post", data:{abide:''}) do %>
 				<p>
 					<%= label_tag(:name, "Name") %>
-					<%= text_field_tag(:name, params[:name]) %>
+					<%= text_field_tag(:name, params[:name], required:'') %>
+					<small class="error">This field is required.</small>
 				</p>
 				<p>
 					<%= label_tag(:email, "Email") %>
-					<%= text_field_tag(:email, params[:email]) %>
+					<%= text_field_tag(:email, params[:email], required:'') %>
+					<small class="error">A valid email address is required.</small>
 				</p>
 				<p>
 					<%= label_tag(:body, "Message") %>
