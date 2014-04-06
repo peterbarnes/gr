@@ -1,10 +1,15 @@
 GrApp::Application.routes.draw do
-  root 'static_pages#home'
-  match '/contact', to: 'static_pages#contact', via: 'get'
-  match '/about', to: 'static_pages#about', via: 'get'
-  match '/services', to: 'static_pages#services', via: 'get'
-  match '/locations', to: 'static_pages#locations', via: 'get'
-  post 'send' => 'static_pages#sendit'
+  namespace :admin, constraints: { subdomain: 'admin' }, path: '/' do 
+    root 'static_pages#home', as: "admin_root"
+  end
+  constraints subdomain: lambda { |r| r == 'www' || r.empty?} do
+    root 'static_pages#home'
+    match '/contact', to: 'static_pages#contact', via: 'get'
+    match '/about', to: 'static_pages#about', via: 'get'
+    match '/services', to: 'static_pages#services', via: 'get'
+    match '/locations', to: 'static_pages#locations', via: 'get'
+    post 'send' => 'static_pages#sendit'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

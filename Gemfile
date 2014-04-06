@@ -3,9 +3,12 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.4'
 gem 'foundation-rails'
+gem 'bcrypt', '~> 3.1.7'
 
 group :development do
 	gem 'sqlite3'
+	gem 'better_errors'
+	gem 'binding_of_caller'
 end
 
 gem 'sass-rails', '~> 4.0.2'
