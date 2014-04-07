@@ -8,11 +8,13 @@ GrApp::Application.routes.draw do
     post 'send' => 'static_pages#sendit'
   end
   constraints subdomain: lambda { |r| r == 'www' || r.empty?} do
+    resources :users
     root 'static_pages#home'
     match '/contact', to: 'static_pages#contact', via: 'get'
     match '/about', to: 'static_pages#about', via: 'get'
     match '/services', to: 'static_pages#services', via: 'get'
     match '/locations', to: 'static_pages#locations', via: 'get'
+    match '/signup', to: 'users#new', via: 'get'
     post 'send' => 'static_pages#sendit'
   end
 

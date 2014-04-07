@@ -1,0 +1,38 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+	<div class="small-12 medium-12 large-12 columns">
+		<div class="container">
+			<h2>
+				<%= gravatar_for @user %>
+				<i class="fa fa-user"></i> <%= @user.name %>
+				<small><a href="#">Add an occupation <i class="fa fa-pencil"></i></a></small>
+			</h2>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 medium-12 large-12 columns">
+		<div class="container">
+			<i class="fa fa-tasks"> Details </i><a href="#"> <i class="fa fa-pencil"></i></a>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="small-6 medium-6 large-6 columns">
+		<div class="container">
+			<h3><i class="fa fa-book"></i> About me</h3>
+			<p class="panel">Donec sed odio operae, eu vulputate felis rhoncus. Tu quoque, Brute, fili mi, nihil timor populi, nihil! Hi omnes lingua, institutis, legibus inter se differunt. Nec dubitamus multa iter quae et nos invenerat. Pellentesque habitant morbi tristique senectus et netus.
+Curabitur blandit tempus ardua ridiculus sed magna. Inmensae subtilitatis, obscuris et malesuada fames. Ullamco laboris nisi ut aliquid ex ea commodi consequat. Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Mercedem aut nummos unde unde extricat, amaras. Cras mattis iudicium purus sit amet fermentum.
+Ab illo tempore, ab est sed immemorabili. Quis aute iure reprehenderit in voluptate velit esse. Inmensae subtilitatis, obscuris et malesuada fames. Quam temere in vitiis, legem sancimus haerentia.</p>
+		</div>
+	</div>
+	<div class="small-6 medium-6 large-6 columns">
+		<div class="container">
+			<h3><i class="fa fa-bookmark"></i> Interests</h3>
+				<ul class="panel">
+					<li>Interest 1</li>
+					<li>Interest 2</li>
+				</ul>
+		</div>
+	</div>
+</div>
