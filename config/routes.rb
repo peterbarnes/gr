@@ -1,20 +1,23 @@
 GrApp::Application.routes.draw do
   namespace :admin, constraints: { subdomain: 'admin' }, path: '/' do 
     root 'static_pages#home', as: "admin_root"
-    match '/contact', to: 'static_pages#contact', via: 'get'
-    match '/about', to: 'static_pages#about', via: 'get'
-    match '/services', to: 'static_pages#services', via: 'get'
+    match '/contact',   to: 'static_pages#contact',   via: 'get'
+    match '/about',     to: 'static_pages#about',     via: 'get'
+    match '/services',  to: 'static_pages#services',  via: 'get'
     match '/locations', to: 'static_pages#locations', via: 'get'
     post 'send' => 'static_pages#sendit'
   end
   constraints subdomain: lambda { |r| r == 'www' || r.empty?} do
     resources :users
+    resources :sessions, only: [:new, :create, :destroy]
     root 'static_pages#home'
-    match '/contact', to: 'static_pages#contact', via: 'get'
-    match '/about', to: 'static_pages#about', via: 'get'
-    match '/services', to: 'static_pages#services', via: 'get'
+    match '/contact',   to: 'static_pages#contact',   via: 'get'
+    match '/about',     to: 'static_pages#about',     via: 'get'
+    match '/services',  to: 'static_pages#services',  via: 'get'
     match '/locations', to: 'static_pages#locations', via: 'get'
-    match '/signup', to: 'users#new', via: 'get'
+    match '/signup',    to: 'users#new',              via: 'get'
+    match '/signin',    to: 'sessions#new',           via: 'get'
+    match '/signout',   to: 'sessions#destroy',       via: 'delete'
     post 'send' => 'static_pages#sendit'
   end
 

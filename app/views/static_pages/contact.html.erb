@@ -2,19 +2,37 @@
 <div class="small-12 medium-12 large-12 columns">
 	<div class="container">
 		<div class="header">
-			<h3><i class="fa fa-group"></i> Follow us</h3>
+			<h3>
+				<i class="fa fa-group"></i> 
+				Follow us
+			</h3>
 		</div>
 		<div class="links">
-				<a href="https://www.facebook.com/gameroomforpresident" class="button radius expand" target="blank"><i class="fa fa-facebook"></i> Facebook</a>
-				<a href="#" class="button disabled radius expand"><i class="fa fa-twitter"></i> Twitter (Coming soon)</a>
-				<a href="#" class="button disabled radius expand"><i class=" fa fa-tumblr"></i> Tumblr (Coming soon)</a>
+			<a href="https://www.facebook.com/gameroomforpresident" 
+				 class="button radius expand" target="blank">
+				 <i class="fa fa-facebook"></i> 
+				 Facebook
+			</a>
+			<a href="#" 
+				 class="button disabled radius expand">
+				 <i class="fa fa-twitter"></i> 
+				 Twitter (Coming soon)
+			</a>
+			<a href="#" 
+				 class="button disabled radius expand">
+				 <i class=" fa fa-tumblr"></i> 
+				 Tumblr (Coming soon)
+			</a>
 		</div>
 	</div>
 </div>
 <div class="small-12 medium-12 large-12 columns">
 	<div class="container">
 		<div class="header">
-			<h4><i class="fa fa-comment"></i> Questions, comments, or concerns?</h4>
+			<h4>
+				<i class="fa fa-comment"></i> 
+				Questions, comments, or concerns?
+			</h4>
 		</div>
 		<div class="email">
 			<%= form_tag("/send", method: "post", data:{abide:''}) do %>
@@ -32,7 +50,10 @@
 					<%= label_tag(:body, "Message") %>
 					<%= text_area_tag(:body) %>
 				</p>
-				<input name="commit" type="submit" value="Send" class="button expand radius">
+				<input name="commit" 
+							 type="submit" 
+							 value="Send" 
+							 class="button expand radius">
 				<% end %>
 		</div>
 	</div>

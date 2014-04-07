@@ -29,6 +29,34 @@
       </ul>
 <!-- Left Nav Section -->
       <ul class="left">
+        <% if signed_in? %>
+          <li class="has-dropdown">
+            <a href="#">Account</a>
+            <ul class="dropdown">
+              <li>
+                <%= link_to current_user do %>
+                  <i class="fa fa-user"></i>
+                  Profile
+                <% end %>
+              </li>
+              <li>
+                <%= link_to '#' do %>
+                  <i class="fa fa-cogs"></i>
+                  Settings
+                <% end %>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to signout_path, method: 'delete' do %>
+                  <i class="fa fa-sign-out"></i>
+                  Sign out
+                <% end %>
+              </li>
+            </ul>
+          </li>
+          <% else %>
+          <li><%= link_to "Sign in", signin_path %></li>
+        <% end %>
       </ul>
     </section>
 </nav>

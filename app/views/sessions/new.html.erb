@@ -1,0 +1,22 @@
+<% provide(:title, "Sign in") %>
+<div class="row">
+	<div class="small-12 medium-12 large-12 columns">
+		<h2>Sign in</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 medium-12 large-12 columns">
+		<%= form_for(:session, url: sessions_path) do |f| %>
+
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+
+			<%= f.submit "Sign in", class: "button radius expand" %>
+		<% end %>
+
+		<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+	</div>
+</div>
