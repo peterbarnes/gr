@@ -4,6 +4,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.4'
 gem 'foundation-rails'
 gem 'bcrypt', '~> 3.1.7'
+gem 'will_paginate', '3.0.4'
 
 group :development do
 	gem 'sqlite3'
