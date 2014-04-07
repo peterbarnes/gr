@@ -12,11 +12,16 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
+      <%= render 'layouts/header' %>
+      <div>
+        <% flash.each do |key, value| %>
+          <div data-alert class="alert-box <%= key %> radius"><%= value %></div>
+        <% end %>
+      </div>
     <div class="row">  
-    <%= yield %>
+      <%= yield %>
     </div>
-    <%= render 'layouts/footer' %>
-    <%= javascript_include_tag "application" %>
+      <%= render 'layouts/footer' %>
+      <%= javascript_include_tag "application" %>
   </body>
 </html>

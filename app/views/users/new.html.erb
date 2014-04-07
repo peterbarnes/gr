@@ -1,0 +1,34 @@
+<% provide(:title, "Sign up") %>
+<div class="row">
+	<div class="small-12 medium-12 large-12 columns">
+		<div class="container">
+			<h2>
+				<i class="fa fa-users"></i> Sign up
+			</h2>
+
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="small-12 medium-12 large-12 columns">
+		<div class="container">
+			<%= form_for(@user) do |f| %>
+				<%= render 'shared/error_messages' %>
+
+				<%= f.label :name %>
+				<%= f.text_field :name, autofocus: true %>
+
+				<%= f.label :email %>
+				<%= f.text_field :email %>
+
+				<%= f.label :password %>
+				<%= f.password_field :password %>
+
+				<%= f.label :password_confirmation %>
+				<%= f.password_field :password_confirmation %>
+
+				<%= f.submit "Create my account", class: "button expand radius" %>
+			<% end %>
+		</div>
+	</div>
+</div>
